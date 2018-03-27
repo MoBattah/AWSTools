@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import boto3
+import sys
 import logging
 import argparse
 
@@ -17,8 +18,10 @@ def getdata():
 
 
 def searchdata():
+    args = str(sys.argv[1])
+    print(args)
     for line in open("datalake.txt"):
-        if "INTSA" in line:
+        if args in line:
             print(line)
 
 
